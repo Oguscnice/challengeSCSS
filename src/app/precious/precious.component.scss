@@ -1,11 +1,13 @@
 
     @import '../../styles.scss';
+
   @mixin ringsDesign ($width, $height, $largeur, $color){
     width: $width ;
     height: $height;
     border: $color $largeur solid;
     border-radius: 50%;
   }
+
 h2 {
   text-align: center;
 }
@@ -36,8 +38,7 @@ header {
 }
 
 .firstTitle,
-.secondTitle,
-.loopRings {
+.secondTitle, .loopRings {
   display: flex;
   padding: 2vh;
   align-items: center;
@@ -55,18 +56,21 @@ header {
   @include ringsDesign (14vw,14vw, 12px, $gold-color);
   box-shadow : 8px 8px 8px darken($gold-color, 20); 
 }
-
-.sixRings{
-  justify-content: center;
-}
 .loopRings{
-  height: 10vh;
+  padding-top: 6vh;
+  position: relative;
 }
 
 @for $i from 1 through 6 {
   .sixRings#{$i} {
-    @include ringsDesign ( 3vw+ $i,3vw+ $i, 8px, #444343);
+    @include ringsDesign ( 3vw+ $i,3vw+ $i, 2px+ $i, #444343);
+    box-shadow : 1px+ $i 1px+ $i 1px+ $i darken($gold-color, 20);
+    left: -90px + ($i - 3) * 30;
+    position: absolute;;
   }
+}
+.lastH2{
+  padding-top: 6vh;
 }
 
 footer {

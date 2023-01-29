@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Ringbearer";
+  src: local("Ringbearer"),
+    url("./assets/police/ringbearer/RINGM___.TTF") format("opentype");
+}
+
+$police-h1: "Ringbearer";
+$main-color: #ff5f01;
+$gold-color: #fcca02;
+
+* {
+  margin: 0;
+  padding: 0 ;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: $police-h1;
+}
+
+

@@ -1,0 +1,91 @@
+
+    @import '../../styles.scss';
+  @mixin ringsDesign ($width, $height, $largeur, $color){
+    width: $width ;
+    height: $height;
+    border: $color $largeur solid;
+    border-radius: 50%;
+  }
+h2 {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  background-color: $main-color;
+  color: white;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 8vh;
+  justify-content: space-between;
+  // padding: 1vh;
+  align-items: center;
+  > ul {
+    display: flex;
+    > li {
+      padding: 1vh;
+    }
+  }
+}
+
+.underline {
+  border-bottom: white solid;
+}
+
+.firstTitle,
+.secondTitle,
+.loopRings {
+  display: flex;
+  padding: 2vh;
+  align-items: center;
+}
+
+.Ring{
+  margin: 2vh;
+}
+
+.ringTitle {
+  @include ringsDesign (7vh,7vh, 4px, $main-color);
+}
+
+.oneRingTitle{
+  @include ringsDesign (14vw,14vw, 12px, $gold-color);
+  box-shadow : 8px 8px 8px darken($gold-color, 20); 
+}
+
+.sixRings{
+  justify-content: center;
+}
+.loopRings{
+  height: 10vh;
+}
+
+@for $i from 1 through 6 {
+  .sixRings#{$i} {
+    @include ringsDesign ( 3vw+ $i,3vw+ $i, 8px, #444343);
+  }
+}
+
+footer {
+  display: flex;
+  background-color: $main-color;
+  color: white;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  justify-content: space-around;
+  // padding: 1vh;
+
+  > .inFooter {
+    > ul li {
+      padding: 2vh;
+    }
+  }
+}
+
+
